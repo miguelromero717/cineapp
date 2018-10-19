@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bienvenido a CineApp</title>
+</head>
+<body>
+	<h1>Lista de Peliculas</h1>
+	
+	<ol>
+		<li th:each="pel : ${peliculas}" th:text="${pel}"></li>
+	</ol>
+</body>
+</html>

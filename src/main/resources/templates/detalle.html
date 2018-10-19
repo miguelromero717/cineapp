@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de la pelicula</title>
+</head>
+<body>
+<h1 th:text="'Titulo de la Pelicula ' + ${titulo}"></h1>
+<h2 th:text="'Duracion ' + ${duracion} + 'min.'"></h2>
+<h3 th:text="'Precio ' + ${precio}"></h3>
+</body>
+</html>
