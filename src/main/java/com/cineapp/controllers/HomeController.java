@@ -47,6 +47,7 @@ public class HomeController {
 			p1.setGenero("Drama");
 			p1.setFechaEstreno(formatter.parse("22/10/2018"));
 			p1.setImagen("titanic.jpg");
+			p1.setStatus("Inactiva");
 			
 			Pelicula p2 = new Pelicula();
 			p2.setId(2);

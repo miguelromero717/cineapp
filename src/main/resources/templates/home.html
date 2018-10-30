@@ -31,11 +31,12 @@
 						<td th:text="${pel.duracion}"></td>
 						<td th:text="${pel.clasificacion}"></td>
 						<td th:text="${pel.genero}"></td>
-						<td>
-							<img th:src="@{/images/} + ${pel.imagen}"/>
-						</td>
+						<td><img th:src="@{/images/} + ${pel.imagen}" /></td>
 						<td th:text="${#dates.format(pel.fechaEstreno, 'dd-MMM-yyyy')}"></td>
-						<td th:text="${pel.status}"></td>
+						<td th:switch="${pel.status}">
+							<span th:case="'Activa'" th:text="${pel.status}" class="badge badge-success"></span> 
+							<span th:case="'Inactiva'" th:text="${pel.status}" class="badge badge-secondary"></span>
+						</td>
 					</tr>
 				</tbody>
 			</table>
