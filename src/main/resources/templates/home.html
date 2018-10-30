@@ -8,43 +8,18 @@
 	th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
-	<div class="card">
-		<div class="card-header">Lista de peliculas</div>
-		<div class="card-body">
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Titulo</th>
-						<th>Duracion</th>
-						<th>Clasificacion</th>
-						<th>Genero</th>
-						<th>Imagen</th>
-						<th>Fecha Estreno</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="pel : ${peliculas}">
-						<td th:text="${pel.id}"></td>
-						<td th:text="${pel.titulo}"></td>
-						<td th:text="${pel.duracion}"></td>
-						<td th:text="${pel.clasificacion}"></td>
-						<td th:text="${pel.genero}"></td>
-						<td><img th:src="@{/images/} + ${pel.imagen}" /></td>
-						<td th:text="${#dates.format(pel.fechaEstreno, 'dd-MMM-yyyy')}"></td>
-						<td th:switch="${pel.status}">
-							<span th:case="'Activa'" th:text="${pel.status}" class="badge badge-success"></span> 
-							<span th:case="'Inactiva'" th:text="${pel.status}" class="badge badge-secondary"></span>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+
+	<div th:insert="~{header :: header}"></div>
+
+	<div class="container" role="main">
+		<div th:insert="~{slider :: slider}"></div>
 	</div>
+
+	<div th:insert="~{footer :: footer}"></div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="../static/js/bootstrap.min.js"
-		th:href="@{/js/bootstrap.min.js}"></script>
+		th:src="@{/js/bootstrap.min.js}"></script>
+
 </body>
 </html>
