@@ -11,7 +11,7 @@
 
 				<div th:each="pel : ${peliculas}"
 					class="col-xs-12 col-sm-6 col-md-3">
-					<img th:src="@{/images/} + ${pel.imagen}" width="150" height="200"/>
+					<img th:src="@{/images/} + ${pel.imagen}" class="rounded" width="150" height="200"/>
 					<h4 th:text="${pel.titulo}"></h4>
 					<h4>
 						<span th:text="${pel.clasificacion}" class="badge badge-pill badge-warning"></span> 

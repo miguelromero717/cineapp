@@ -76,10 +76,20 @@ public class HomeController {
 			p4.setFechaEstreno(formatter.parse("25/10/2018"));
 			p4.setImagen("monsters.jpg");
 			
+			Pelicula p5 = new Pelicula();
+			p5.setId(5);
+			p5.setTitulo("Logan");
+			p5.setDuracion(120);
+			p5.setClasificacion("A");
+			p5.setGenero("Acción");
+			p5.setFechaEstreno(formatter.parse("26/10/2018"));
+			p5.setImagen("estreno2.png");
+			
 			lista.add(p1);
 			lista.add(p2);
 			lista.add(p3);
 			lista.add(p4);
+			lista.add(p5);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
