@@ -26,7 +26,7 @@ public class HomeController {
 		return "detalle";
 	}
 	
-	@GetMapping(value = "/home")
+	@GetMapping(value = "/")
 	public String mostrarPrincipal(Model model) {
 		List<Pelicula> peliculas = getLista();
 		model.addAttribute("peliculas", peliculas);

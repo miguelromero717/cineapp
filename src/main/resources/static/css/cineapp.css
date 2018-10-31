@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+footer{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/** Cartelera **/
+.cartelera .col-md-3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cartelera h2 {
+  font-weight: normal;
+}
+.cartelera .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}

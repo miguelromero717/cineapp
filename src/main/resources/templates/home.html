@@ -6,16 +6,26 @@
 <title>Bienvenido a CineApp</title>
 <link rel="stylesheet" href="../static/css/bootstrap.min.css"
 	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/css/cineapp.css"
+	th:href="@{/css/cineapp.css}">
 </head>
 <body>
 
 	<div th:insert="~{header :: header}"></div>
 
-	<div class="container" role="main">
-		<div th:insert="~{slider :: slider}"></div>
-	</div>
+	<br>
 
-	<div th:insert="~{footer :: footer}"></div>
+	<div class="container" role="main">
+
+		<div th:insert="~{slider :: slider}"></div>
+
+		<br>
+
+		<div th:insert="~{cartelera :: cartelera}"></div>
+
+		<div th:insert="~{footer :: footer}"></div>
+
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="../static/js/bootstrap.min.js"
