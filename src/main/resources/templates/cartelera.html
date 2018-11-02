@@ -7,19 +7,43 @@
 	<div th:fragment="cartelera">
 
 		<div class="container cartelera">
+
+			<div class="row page-header">
+				<div class="col-lg-12">
+					<h2 class="text text-center">
+						<span class="badge badge-pill badge-success">EN CARTELERA</span>
+					</h2>
+					<form class="form-inline" method="post" th:action="@{/search}">
+						<div class="form-group">
+							<label for="fecha">Fecha: </label> 
+							<select id="fecha" name="fecha" class="form-control">
+								<option th:each="f : ${fechas}" th:value="${f}" th:text="${f}"></option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Filtrar</button>
+					</form>
+				</div>
+			</div>
+			
+			<br>
+
 			<div class="row">
 
 				<div th:each="pel : ${peliculas}"
 					class="col-xs-12 col-sm-6 col-md-3">
-					<img th:src="@{/images/} + ${pel.imagen}" class="rounded" width="150" height="200"/>
+					<img th:src="@{/images/} + ${pel.imagen}" class="rounded"
+						width="150" height="200" />
 					<h4 th:text="${pel.titulo}"></h4>
 					<h4>
-						<span th:text="${pel.clasificacion}" class="badge badge-pill badge-warning"></span> 
-						<span th:text="${pel.duracion} + ' min'" class="badge badge-pill badge-info"></span> 
-						<span th:text="${pel.genero}" class="badge badge-pill badge-light"></span>
+						<span th:text="${pel.clasificacion}"
+							class="badge badge-pill badge-warning"></span> <span
+							th:text="${pel.duracion} + ' min'"
+							class="badge badge-pill badge-info"></span> <span
+							th:text="${pel.genero}" class="badge badge-pill badge-light"></span>
 					</h4>
 					<p>
-						<a class="btn btn-sm btn-primary" href="#" role="button">Consulta
+						<a class="btn btn-sm btn-primary"
+							th:href="@{/detalle/} + ${pel.id} + '/' + ${fecha}" role="button">Consulta
 							Horarios &raquo;</a>
 					</p>
 				</div>
