@@ -27,9 +27,7 @@ public class HomeController {
 	
 	@GetMapping(value = "/detalle/{id}/{fecha}")
 	public String mostrarDetalle(Model model, @PathVariable("id") int id, @PathVariable("fecha") String fecha) {
-		model.addAttribute("id", id);
-		model.addAttribute("fecha", fecha);
-		
+	    model.addAttribute("pelicula", this.peliculasService.findById(id));
 		return "detalle";
 	}
 	

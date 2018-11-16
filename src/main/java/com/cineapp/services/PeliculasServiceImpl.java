@@ -10,11 +10,14 @@ import java.util.List;
 @Service
 public class PeliculasServiceImpl implements PeliculasService {
 
+    List<Pelicula> lista;
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-    @Override
-    public List<Pelicula> buscarTodas() {
-        List<Pelicula> lista = null;
+    public PeliculasServiceImpl() {
+        this.init();
+    }
+
+    private void init(){
         try {
             lista = new ArrayList<>();
 
@@ -72,8 +75,21 @@ public class PeliculasServiceImpl implements PeliculasService {
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
 
+    @Override
+    public List<Pelicula> buscarTodas() {
         return lista;
+    }
+
+    @Override
+    public Pelicula findById(int id) {
+        for (Pelicula p: lista) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
+        return null;
     }
 
 }

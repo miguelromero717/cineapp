@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface PeliculasService {
 
-    public List<Pelicula> buscarTodas();
+    List<Pelicula> buscarTodas();
+
+    Pelicula findById(int id);
 
 }
